@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormTests {
 
-    private static final String filesStorage = "src/test/java/com/nikulin/files/";
+    private static final String filesStorage = "src/test/resources/";
     private String firstName = "Petr";
     private String lastName = "Petrov";
     private String email = "petrov@test.com";
