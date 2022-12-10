@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormTests {
+
     private final String urlPagePracticeForm = "https://demoqa.com/automation-practice-form";
     private static final String filesStorage = "src/test/java/com/nikulin/files/";
     private String firstName = "Petr";
