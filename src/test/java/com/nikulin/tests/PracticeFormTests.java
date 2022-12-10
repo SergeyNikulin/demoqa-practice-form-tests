@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormTests {
 
-    private final String urlPagePracticeForm = "https://demoqa.com/automation-practice-form";
     private static final String filesStorage = "src/test/java/com/nikulin/files/";
     private String firstName = "Petr";
     private String lastName = "Petrov";
@@ -33,13 +32,14 @@ public class PracticeFormTests {
 
     @BeforeAll
     public static void beforeAll() {
+        Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "500x1000"; // Если есть проблема с отсутствием кнопки Submit, то необходимо подобрать разрешение при котором кнопка будет отображаться
     }
 
     @Test
     public void practiceForm() {
         // Открытие страницы формы
-        open(urlPagePracticeForm);
+        open("/automation-practice-form");
 
         // Заполнение формы
         $("#firstName").setValue(firstName);
