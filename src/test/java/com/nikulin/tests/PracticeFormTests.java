@@ -1,6 +1,7 @@
 package com.nikulin.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.nikulin.pages.RegistrationPage;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -30,6 +31,8 @@ public class PracticeFormTests {
     private String state = "Haryana"; // Допустимы только значения из справочника
     private String city = "Karnal"; // Допустимы только значения из справочника
 
+    RegistrationPage registrationPage = new RegistrationPage();
+
     @BeforeAll
     public static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
@@ -47,10 +50,7 @@ public class PracticeFormTests {
         $("#userEmail").setValue(email);
         $("#genterWrapper").$(byText(gender)).click();
         $("#userNumber").setValue(userNumber);
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__year-select").selectOption(yearOfBirth);
-        $(".react-datepicker__month-select").selectOption(monthOfBirth);
-        $(".react-datepicker__day--0" + dayOfBirth + ":not(.react-datepicker__day--outside-month").click();
+        registrationPage.calendar.setDate(dayOfBirth, monthOfBirth, yearOfBirth);
         $("#subjectsInput").setValue(subjects).pressEnter();
         $("#hobbiesWrapper").$(byText(hobbiesReading)).click();
         $("#hobbiesWrapper").$(byText(hobbiesMusic)).click();
