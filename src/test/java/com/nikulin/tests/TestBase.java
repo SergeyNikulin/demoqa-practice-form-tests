@@ -21,6 +21,7 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "500x1000"; // Если есть проблема с отсутствием кнопки Submit, то необходимо подобрать разрешение при котором кнопка будет отображаться
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     @AfterEach
