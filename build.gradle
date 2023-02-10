@@ -37,6 +37,27 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-test {
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+//            events "started", "failed"
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+task properties_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "properties"
+    }
+}
+
+task base(type: Test) {
+    useJUnitPlatform {
+        includeTags "base"
+    }
 }
