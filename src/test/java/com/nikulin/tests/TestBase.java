@@ -26,8 +26,8 @@ public class TestBase {
         //Configuration.browser = System.getProperty("browser");
         //Configuration.browserVersion = System.getProperty("version");
         //Configuration.browserSize = System.getProperty("size"); // Если есть проблема с отсутствием кнопки Submit, то необходимо подобрать разрешение при котором кнопка будет отображаться
-        //Configuration.remote = getSelenoidUrl();
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.remote = getSelenoidUrl();
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     private static String getSelenoidUrl() {
