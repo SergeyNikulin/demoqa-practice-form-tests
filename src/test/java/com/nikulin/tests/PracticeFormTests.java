@@ -2,6 +2,7 @@ package com.nikulin.tests;
 
 import com.github.javafaker.Faker;
 import com.nikulin.pages.RegistrationPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.nikulin.tests.TestData.*;
@@ -12,6 +13,7 @@ public class PracticeFormTests extends TestBase {
     Faker faker = new Faker();
 
     @Test
+    @Tag("owner")
     public void practiceForm() {
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
